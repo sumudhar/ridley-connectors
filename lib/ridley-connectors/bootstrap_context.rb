@@ -27,6 +27,7 @@ module Ridley
       attr_reader :run_list
       attr_reader :environment
       attr_reader :hints
+      attr_reader :ssl_verify_mode
 
       def initialize(options = {})
         options = options.reverse_merge(
@@ -54,6 +55,9 @@ module Ridley
         @attributes                = options[:attributes]
         @run_list                  = options[:run_list]
         @environment               = options[:environment]
+        if options[:ssl].present? and options[:ssl][:verify].present? and options[:ssl][:verify] == false
+          @ssl_verify_mode           = :verify_none
+        end
       end
 
       # @return [String]

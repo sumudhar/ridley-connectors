@@ -44,6 +44,10 @@ module Ridley
           body << %Q{encrypted_data_bag_secret "#{bootstrap_directory}/encrypted_data_bag_secret"\n}
         end
 
+        if ssl_verify_mode.present?
+          body << %Q{ssl_verify_mode "#{ssl_verify_mode}"\n}
+        end
+
         body
       end
 

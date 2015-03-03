@@ -45,7 +45,7 @@ module Ridley
         end
 
         if ssl_verify_mode.present?
-          body << %Q{ssl_verify_mode "#{ssl_verify_mode}"\n}
+          body << %Q{ssl_verify_mode :#{ssl_verify_mode}\n}
         end
 
         body

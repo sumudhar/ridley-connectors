@@ -55,7 +55,7 @@ module Ridley
         @attributes                = options[:attributes]
         @run_list                  = options[:run_list]
         @environment               = options[:environment]
-        if options.key?(:ssh) and options[:ssl].key?(:verify) and options[:ssl][:verify] == false
+        if options.key?(:ssl) and options[:ssl].key?(:verify) and options[:ssl][:verify] == false
           @ssl_verify_mode           = :verify_none
         end
       end

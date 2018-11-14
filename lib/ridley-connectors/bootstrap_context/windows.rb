@@ -21,6 +21,7 @@ module Ridley
   log_location     STDOUT
   chef_server_url  "#{server_url}"
   validation_client_name "#{validator_client}"
+  ssl_verify_mode :verify_none
   CONFIG
 
         if node_name.present?
